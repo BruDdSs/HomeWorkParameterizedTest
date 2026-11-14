@@ -1,0 +1,22 @@
+ID: 500321
+Заголовок: Проверка появления ошибки при авторизации с неверным логином
+Priority: P2(High)
+Severity: S3(Major)
+
+Предусловие: 
+Открыта страница авторизации https://www.saucedemo.com/
+
+Тестовые данные (из @ValueSource логин/пароль): 
+- locked_out_user / secret_sauce
+- invalid_user / secret_sauce
+- admin / secret_sauce
+
+Шаги:
+1. Ввести логин в поле "Username".
+2. Ввести пароль "secret_sauce" в поле "Password".
+3. Нажать кнопку "Login".
+
+Ожидаемый результат:
+Пользователь остается на странице авторизации. 
+В верхней части формы появляется красный блок с сообщением об ошибке -
+(например, "Epic sadface: Sorry, this user has been locked out" для заблокированного пользователя).
