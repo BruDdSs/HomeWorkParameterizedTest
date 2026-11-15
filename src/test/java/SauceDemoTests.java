@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -63,5 +64,10 @@ public class SauceDemoTests {
         }else {
             $("[data-test='error']").shouldBe(Condition.visible);
         }
+
+    }
+    @AfterEach
+    void tearDown() {
+        closeWebDriver();
     }
 }
